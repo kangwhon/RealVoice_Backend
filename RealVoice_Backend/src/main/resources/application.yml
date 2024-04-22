@@ -1,0 +1,4 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://realvoice:realvoice@realvoice.ju1uzh6.mongodb.net/RealVoice?retryWrites=true&w=majority&appName=RealVoice
