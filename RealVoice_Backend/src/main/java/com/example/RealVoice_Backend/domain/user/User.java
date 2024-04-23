@@ -23,6 +23,6 @@ public class User {
     private String fullName; // 이름
     private String email; // 이메일
     private String password; // 비밀번호
-    //private String profilePictureUrl; // 프로필 사진 URL
+    private String url; // 프로필 사진 URL
     private Date created_at; // 가입 날짜
 }
