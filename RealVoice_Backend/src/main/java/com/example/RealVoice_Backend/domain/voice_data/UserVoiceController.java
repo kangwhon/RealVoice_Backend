@@ -1,12 +1,17 @@
 package com.example.RealVoice_Backend.domain.voice_data;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-
 import java.io.IOException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/user/voice")
@@ -21,21 +26,12 @@ public class UserVoiceController {
             @RequestParam("voiceFile") MultipartFile voiceFile
     ) {
         try {
-            // 음성 파일 업로드 및 저장
-            String voiceId = saveVoiceFile(voiceFile); // 음성 파일을 저장하고, 저장된 음성 파일 ID를 가져옴
-            userVoiceService.saveUserVoice(userId, voiceId);
+            // 사용자 음성 데이터 저장
+            userVoiceService.saveUserVoice(userId, voiceFile);
             return ResponseEntity.ok("User voice uploaded successfully.");
         } catch (IOException e) {
             return ResponseEntity.badRequest().body("Failed to upload user voice.");
         }
-    }
-
-    private String saveVoiceFile(MultipartFile voiceFile) throws IOException {
-        // 실제 음성 파일 저장 로직 구현
-        // 여기서는 단순히 파일을 저장하고, 저장된 파일의 ID를 반환하는 예시 코드
-        // 실제 구현에서는 파일을 어떻게 저장할지에 따라 구현 필요
-        // 예시: 파일을 저장하고, 저장된 파일의 ID를 반환
-        return "generated-voice-id"; // 실제 저장된 파일 ID 또는 URL을 반환하도록 수정
     }
 
     @GetMapping("/{userVoiceId}")
@@ -46,5 +42,11 @@ public class UserVoiceController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+    
+    @DeleteMapping("/{userVoiceId}")
+    public ResponseEntity<String> deleteUserVoice(@PathVariable String userVoiceId) {
+        userVoiceService.deleteUserVoice(userVoiceId);
+        return ResponseEntity.ok("User voice deleted successfully.");
     }
 }

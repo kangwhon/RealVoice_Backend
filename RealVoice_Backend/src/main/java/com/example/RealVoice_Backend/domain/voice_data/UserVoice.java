@@ -17,12 +17,13 @@ public class UserVoice {
 	
 	@Id
     private String id;
+
     private String userId;
-    private String voiceId;
-    
-    public UserVoice(String userId, String voiceId) {
+    private String filePath;
+
+    public UserVoice(String userId, String filePath) {
         this.userId = userId;
-        this.voiceId = voiceId;
+        this.filePath = filePath;
     }
 
 }
