@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "619750784415",
+    "project_id": "realvoice-2d8ee",
+    "storage_bucket": "realvoice-2d8ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:619750784415:android:c9ae746546b5e6806951aa",
+        "android_client_info": {
+          "package_name": "com.company.RealVoice"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6b3llIOz1AdttEefAM0bXVGtYvn0DAxg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -19,10 +19,10 @@ public class User {
 	
 	@Id
     private String id; // 여기서 id는 mongoDB에서 객체를 식별하기 위한 id
-    private String username; // 사용자 id
-    private String fullName; // 이름
-    private String email; // 이메일
-    private String password; // 비밀번호
+    private String nickName; // 닉네임
+    private String userName; // 이름
+    private String phoneNumber; //전화번호
     private String url; // 프로필 사진 URL
+    private String verificationCode; // 인증 코드
     private Date created_at; // 가입 날짜
 }

@@ -3,6 +3,5 @@ package com.example.RealVoice_Backend.domain.user;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface UserRepository extends MongoRepository<User, String> {
-    User findByUsername(String username);
-    void deleteProfilePictureById(String userId);
+    User findByPhoneNumber(String phoneNumber);
 }

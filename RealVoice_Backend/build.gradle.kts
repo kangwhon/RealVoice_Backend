@@ -26,7 +26,10 @@ dependencies {
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
 	implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
+	implementation("com.google.firebase:firebase-admin:9.2.0")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
+	implementation("com.google.firebase:firebase-auth")
 }
 
 tasks.withType<Test> {
